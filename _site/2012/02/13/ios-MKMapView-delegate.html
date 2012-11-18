@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Ios5 MKMapView delegate 使用小记</title>
+   <meta name="author" content="Tom Preston-Werner" />
+   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Tom Preston-Werner" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <a href="/">timger's blog</a>
+    <a class="extra" href="/">home</a>
+  </div>
+  
+  <div id="post">
+<h1>Ios5 MKMapView delegate 使用小记</h1>
+
+<p class="meta">12 Feb 2012 -beijing</p>
+
+
+<h3>题记</h3>
+
+<p>我最近需要写一个用户在地图上标记自己位置的app,</p>
+
+<h3>资源</h3>
+
+<ul>
+<li><a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/MKMapView/MKMapView.html">MapView</a></li>
+<li><a href="https://developer.apple.com/library/ios/#documentation/MapKit/Reference/MKMapViewDelegate_Protocol/MKMapViewDelegate/MKMapViewDelegate.html">MapView Delegate</a></li>
+<li><a href="https://github.com/mattneub/Programming-iOS-4-Book-Examples/tree/0a6446784ac07914cd8e6315938539aa72255b4e/p707map/p707map">p707map</a></li>
+</ul>
+
+
+<h3>测试的时候报错</h3>
+
+<pre><code>CLLocationCoordinate2D loc = CLLocationCoordinate2DMake([[NSNumber numberWithFloat:34.923964] doubleValue],[[NSNumber numberWithFloat:-120.219558] doubleValue]);
+MKCoordinateRegion reg = MKCoordinateRegionMakeWithDistance(loc,[[NSNumber numberWithFloat:1000] doubleValue],[[NSNumber numberWithFloat:1000] doubleValue]);
+</code></pre>
+
+<p><small></p>
+
+<pre><code>warning: Unable to read symbols for /Library/MobileSubstrate/MobileSubstrate.dylib (file not found).
+warning: No copy of MobileSubstrate.dylib found locally, reading from memory on remote device.  This may slow down the debug session.
+warning: Unable to read symbols for /Library/Frameworks/CydiaSubstrate.framework/Libraries/SubstrateLoader.dylib (file not found).
+warning: No copy of SubstrateLoader.dylib found locally, reading from memory on remote device.  This may slow down the debug session.
+warning: Unable to read symbols for /Library/MobileSubstrate/DynamicLibraries/Activator.dylib (file not found).
+warning: No copy of Activator.dylib found locally, reading from memory on remote device.  This may slow down the debug session.
+warning: Unable to read symbols for /Users/timger/Library/Developer/Xcode/iOS DeviceSupport/5.0.1 (9A405)/Symbols/System/Library/AccessibilityBundles/AccessibilitySettingsLoader.bundle/AccessibilitySettingsLoader (file not found).
+warning: No copy of AccessibilitySettingsLoader.bundle/AccessibilitySettingsLoader found locally, reading from memory on remote device.  This may slow down the debug session.
+kill
+quit
+Program ended with exit code: 0
+</code></pre>
+
+<p></small></p>
+
+<p>上面报错貌似是arm7的问题<a href="http://stackoverflow.com/questions/2804953/xcode-linking-error-when-targeting-armv7">ansower</a></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>01 Mar 2012</span> &raquo; <a href="/2012/03/01/ios-core-data-beging.html">ios core data使用初记</a></li>
+    
+      <li><span>23 Feb 2012</span> &raquo; <a href="/2012/02/23/facebook-scribe-install-useage.html">facebook scribe  使用</a></li>
+    
+      <li><span>20 Feb 2012</span> &raquo; <a href="/2012/02/20/fancybox-useage-note.html">fancybox 使用小记</a></li>
+    
+  </ul>
+</div>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=89665" async=""></script>
+<!-- UY END -->
+
+  
+  <div class="footer">
+    <div class="contact">
+      <p>
+        Weibo<br />
+        Twitter<br />
+        Google Plus <br/>
+        Email&Gtalk<br/>
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://weibo.com/zhanghaibo">@timger</a><br />
+        <a href="http://twitter.com/yishenggudou/">@yishenggudou</a><br />
+        <a href="#">@timger</a><br/>
+        yishenggudou#gmail.com
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/tom-preston-werner">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<!--<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29124639-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Google Analytics end -->
+
+</body>
+</html>

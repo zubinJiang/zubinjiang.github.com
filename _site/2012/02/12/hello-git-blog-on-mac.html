@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>jekyll on mac</title>
+   <meta name="author" content="Tom Preston-Werner" />
+   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Tom Preston-Werner" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <a href="/">timger's blog</a>
+    <a class="extra" href="/">home</a>
+  </div>
+  
+  <div id="post">
+<p>===================</p>
+
+<h1>搬家Blog到Git</h1>
+
+<p class="meta">12 Feb 2012 -beijing</p>
+
+
+<h3>开始</h3>
+
+<p>我架在Gae上的<a href="http://blog.timger.info" title="timger blog">blog</a>最近老抽风，以及配额超出限制，打算给自己的blog搬家下，前几天在考察SAE，赶紧还行，正准备迁移到<a href="http://sae.sina.com.cn/" title="SAE">SAE</a>,当然也考虑过百度blog，</p>
+
+<p>在GAE上搭建blog快3年了，虽然高质量的blog不多，但是还是有一些收获的，blog这个东西，不是求高产，只是兴致，有时候有写作冲动的时候好有个地方写东西，</p>
+
+<h4>搬家的原因</h4>
+
+<ul>
+<li>GAE已经被墙，虽然我用自己的AWS EC2 做了反向代理，但还是经常有访问问题的，由于没备案，DNS解析经常出问题</li>
+<li>blog的留言和评论部分因为GAE的被墙而不能使用了，</li>
+<li>我已经好久没写GAE的app了，有时候想改下自己BLog的样式，或者添加一个Blog最近活动的展示，需要下GAE SDk 然后上传，很不方便，</li>
+</ul>
+
+
+<h5>我需要的blog</h5>
+
+<ul>
+<li>简单：界面干净，操作简单，能够以很方便地发博客，我讨厌在浏览器中写blog，很没有感觉，之前GAE Blog 用<a href="https://github.com/xuming/micolog">Micolog</a>搭建，后来自己写了一个Email转发到blog地插件<a href=""></a>,基本也都是在Gmail&amp;Gdoc里面写Blog</li>
+<li>方便配置和修改，可以很方便修改样式，添加一些小html元素，前面说了，我在GAE blog中添加一个html元素很麻烦，</li>
+<li>能评论和访客交流，最好关联微薄[这年头大家都是混微薄地]</li>
+</ul>
+
+
+<p>正在由于搬家到SAE 还是 百度空间的时候，发现了git 写Blog 的方法，一眼就喜欢上，</p>
+
+<ul>
+<li>blog文章就是代码，IDE中就可以写BLOG，</li>
+<li>标记语言，对于程序员的Blog来说太方便了，代码随便贴</li>
+<li>静态html页面，没有了数据库，搬家也容易</li>
+<li>可以和自己的开源项目完美结合，</li>
+<li>很容易修改html代码来改变css样式和添加其他元素</li>
+<li>评论怎么办？加上三方评论，基本够用了</li>
+</ul>
+
+
+<h5>install 过程 ［Mac］</h5>
+
+<p>我使用的mac air 使用jekyll倒是简单，但是air上安装 jekyll费了一些功夫，jekyll是ruby写的，我对ruby不是很熟悉</p>
+
+<ul>
+<li>安装可以参见<a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html">jekyll quick start</a>, <a href="http://www.worldhello.net/gotgithub/03-project-hosting/050-homepage.html#jekyll">http://www.worldhello.net/</a>,<a href="http://blog.envylabs.com/2009/08/publishing-a-blog-with-github-pages-and-jekyll/">Publishing a Blog with GitHub Pages and Jekyll</a></li>
+<li>markdown语法参见post_下的例子和<a href="http://daringfireball.net/projects/markdown/syntax">markdown</a></li>
+<li>blog的模板到jekyll项目主页下载<a href="https://github.com/mojombo/jekyll/wiki/sites">jekyll sites</a>找一个你喜欢的克隆下来就ok</li>
+</ul>
+
+
+<h6>mac install jekyll</h6>
+
+<p>git 怎么安装就不说了，自己google之
+mac air自带的ruby gem 版本太低需要升级<code>sudo gem update --system</code>貌似也不能升级到需要的版本 <a href="http://brandonbohling.com/2011/08/27/Installing-Jekyll-on-Mac/">参考</a></p>
+
+<ul>
+<li>安装rvm ：<code>bash &lt; &lt;( curl https://rvm.beginrescueend.com/releases/rvm-install-head )</code> 执行完之后有提示一段代码 <code>bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)</code> 的复制到shell 执行, 后执行使rvm可用 <code>source /home/timger/.profile</code></li>
+<li>安装ruby <code>rvm install 1.9.2</code> 根据提示完成安装，之后 <code>ruby -v</code> 可看到版本为1.9.2  之后 <code>rvm --default 1.9.2</code> 设置1.9.2为默认版本</li>
+<li><code>gem install jekyll</code> and <code>gem install jekyll-tagging</code> 安装jekyll</li>
+</ul>
+
+
+<h5>其他</h5>
+
+<p>考虑了<a href="http://disqus.com">Disqus</a>速度不稳定 弃用   <a href="http://uyan.cc/">uyan</a>国内创业三方评论，用户很多36ke也在使用选用之,</p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>01 Mar 2012</span> &raquo; <a href="/2012/03/01/ios-core-data-beging.html">ios core data使用初记</a></li>
+    
+      <li><span>23 Feb 2012</span> &raquo; <a href="/2012/02/23/facebook-scribe-install-useage.html">facebook scribe  使用</a></li>
+    
+      <li><span>20 Feb 2012</span> &raquo; <a href="/2012/02/20/fancybox-useage-note.html">fancybox 使用小记</a></li>
+    
+  </ul>
+</div>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=89665" async=""></script>
+<!-- UY END -->
+
+  
+  <div class="footer">
+    <div class="contact">
+      <p>
+        Weibo<br />
+        Twitter<br />
+        Google Plus <br/>
+        Email&Gtalk<br/>
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://weibo.com/zhanghaibo">@timger</a><br />
+        <a href="http://twitter.com/yishenggudou/">@yishenggudou</a><br />
+        <a href="#">@timger</a><br/>
+        yishenggudou#gmail.com
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/tom-preston-werner">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<!--<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29124639-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Google Analytics end -->
+
+</body>
+</html>

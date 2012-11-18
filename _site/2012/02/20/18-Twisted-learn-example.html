@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Twisted学习小记</title>
+   <meta name="author" content="Tom Preston-Werner" />
+   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Tom Preston-Werner" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <a href="/">timger's blog</a>
+    <a class="extra" href="/">home</a>
+  </div>
+  
+  <div id="post">
+<p>===================</p>
+
+<h3>简介</h3>
+
+<h3>入门</h3>
+
+<ul>
+<li><p>继承自<code>from twisted.internet.protocol import Protocol</code>
+  `In <a href="http://blog.chinaunix.net/space.php?uid=7684977&amp;do=blog&amp;id=2569708" title="chinaunix">1</a>: from twisted.internet.protocol import Protocol</p>
+
+<p>  In <a href="http://cc.ecjtu.net/posts/python-twisted-3" title="ecjtu">2</a>: Protocol.
+  Protocol.connected       Protocol.dataReceived    Protocol.transport
+  Protocol.connectionLost  Protocol.logPrefix     <br/>
+  Protocol.connectionMade  Protocol.makeConnection`
+  重写protocol类下的方法</p></li>
+</ul>
+
+
+<h2>Endpoints</h2>
+
+<ul>
+<li>文档中说的是<code>Getting Connected with Endpoints</code><a href="http://twistedmatrix.com/documents/current/core/howto/endpoints.html">endpoints</a> 可见这个是管链接的.</li>
+<li>用于绑定端口,</li>
+<li><blockquote><p>In [3]: import twisted.internet.endpoints as endpoints
+In [4]: endpoints.
+endpoints.ClientFactory
+endpoints.FilePath
+endpoints.IStreamClientEndpointStringParser
+endpoints.IStreamServerEndpointStringParser
+endpoints.Protocol
+endpoints.SSL4ClientEndpoint
+endpoints.SSL4ServerEndpoint
+endpoints.TCP4ClientEndpoint
+endpoints.TCP4ServerEndpoint
+endpoints.UNIXClientEndpoint
+endpoints.UNIXServerEndpoint
+endpoints.clientFromString
+endpoints.defer
+endpoints.directlyProvides
+endpoints.error
+endpoints.getPlugins
+endpoints.implements
+endpoints.interfaces
+endpoints.quoteStringArgument
+endpoints.serverFromString
+endpoints.warnings</p></blockquote></li>
+</ul>
+
+
+<h2><code>Factory</code> is a factory which produces protocols</h2>
+
+<h2><code>reactor</code>->反应堆 event loop</h2>
+
+<h2>参考</h2>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>01 Mar 2012</span> &raquo; <a href="/2012/03/01/ios-core-data-beging.html">ios core data使用初记</a></li>
+    
+      <li><span>23 Feb 2012</span> &raquo; <a href="/2012/02/23/facebook-scribe-install-useage.html">facebook scribe  使用</a></li>
+    
+      <li><span>20 Feb 2012</span> &raquo; <a href="/2012/02/20/fancybox-useage-note.html">fancybox 使用小记</a></li>
+    
+  </ul>
+</div>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=89665" async=""></script>
+<!-- UY END -->
+
+  
+  <div class="footer">
+    <div class="contact">
+      <p>
+        Weibo<br />
+        Twitter<br />
+        Google Plus <br/>
+        Email&Gtalk<br/>
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://weibo.com/zhanghaibo">@timger</a><br />
+        <a href="http://twitter.com/yishenggudou/">@yishenggudou</a><br />
+        <a href="#">@timger</a><br/>
+        yishenggudou#gmail.com
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/tom-preston-werner">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<!--<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29124639-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Google Analytics end -->
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Tom Preston-Werner</title>
+ <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
+ <link href="http://tom.preston-werner.com/"/>
+ <updated>2012-02-13T18:36:57+08:00</updated>
+ <id>http://tom.preston-werner.com/</id>
+ <author>
+   <name>Tom Preston-Werner</name>
+   <email>tom@mojombo.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Ios5 MKMapView delegate 使用小记</title>
+   <link href="http://tom.preston-werner.com/2012/02/13/ios-MKMapView-delegate.html"/>
+   <updated>2012-02-13T00:00:00+08:00</updated>
+   <id>http://tom.preston-werner.com/2012/02/13/ios-MKMapView-delegate</id>
+   <content type="html">&lt;h1&gt;Ios5 MKMapView delegate 使用小记&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;12 Feb 2012 -beijing&lt;/p&gt;
+
+
+&lt;h3&gt;题记&lt;/h3&gt;
+
+&lt;p&gt;我最近需要写一个用户在地图上标记自己位置的app,&lt;/p&gt;
+
+&lt;h3&gt;资源&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/MKMapView/MKMapView.html&quot;&gt;MapView&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/#documentation/MapKit/Reference/MKMapViewDelegate_Protocol/MKMapViewDelegate/MKMapViewDelegate.html&quot;&gt;MapView Delegate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mattneub/Programming-iOS-4-Book-Examples/tree/0a6446784ac07914cd8e6315938539aa72255b4e/p707map/p707map&quot;&gt;p707map&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ios5 MKMapView Class 翻译</title>
+   <link href="http://tom.preston-werner.com/2012/02/12/tags-in-jekyll.html"/>
+   <updated>2012-02-12T00:00:00+08:00</updated>
+   <id>http://tom.preston-werner.com/2012/02/12/tags-in-jekyll</id>
+   <content type="html">
+
+&lt;p class=&quot;meta&quot;&gt;12 Feb 2012 -beijing&lt;/p&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ios5 MKMapView Class 翻译</title>
+   <link href="http://tom.preston-werner.com/2012/02/12/ios-MKMapView-Class-translate.html"/>
+   <updated>2012-02-12T00:00:00+08:00</updated>
+   <id>http://tom.preston-werner.com/2012/02/12/ios-MKMapView-Class-translate</id>
+   <content type="html">&lt;p&gt;==============&lt;/p&gt;
+
+&lt;p class=&quot;meta&quot;&gt;12 Feb 2012 -beijing&lt;/p&gt;
+
+
+&lt;p&gt;MKMapView Class Reference&lt;/p&gt;
+
+&lt;p&gt;Inherits from  继承自&lt;/p&gt;
+
+&lt;p&gt;UIView : UIResponder : NSObject&lt;/p&gt;
+
+&lt;p&gt;Conforms to 符合&lt;/p&gt;
+
+&lt;h2&gt;NSCoding&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;NSCoding (UIView)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;UIAppearance (UIView)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;UIAppearanceContainer (UIView)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NSObject NSObject&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Framework&lt;/h3&gt;
+
+&lt;h2&gt;*  &lt;code&gt;/System/Library/Frameworks/MapKit.framework&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Availability  &lt;br/&gt;
+Available in iOS 3.0 and later. 在ios3.0版本以上支持
+Declared in  申明在 &lt;code&gt;MKMapView.h&lt;/code&gt;,&lt;code&gt;MKTypes.h&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;Related sample code 关联代码&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HazardMap&lt;/li&gt;
+&lt;li&gt;KMLViewer&lt;/li&gt;
+&lt;li&gt;MapCallouts&lt;/li&gt;
+&lt;li&gt;WeatherMap&lt;/li&gt;
+&lt;li&gt;WorldCities&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Overview  概述&lt;/h3&gt;
+
+&lt;p&gt;An MKMapView object provides an embeddable map interface, similar to the one provided by the Maps application. You use this class as-is to display map information and to manipulate the map contents from your application. You can center the map on a given coordinate, specify the size of the area you want to display, and annotate the map with custom information.&lt;/p&gt;
+
+&lt;p&gt;MKMapView 对象提供一个可以镶嵌的地图元素,和一个提供地图服务的app相似，你可以使用这个&lt;code&gt;class&lt;/code&gt;在你的app里面显示地图元素,你可以根据你的需求来自定义地图显示方式，&lt;/p&gt;
+
+&lt;p&gt;Important The Map Kit framework uses Google services to provide map data. Use of this class and the associated interfaces binds you to the Google Maps/Google Earth API terms of service. You can find these terms of service at http://code.google.com/apis/maps/iphone/terms.html.
+When you initialize a map view, you should specify the initial region for that map to display. You do this by setting the region property of the map. A region is defined by a center point and a horizontal and vertical distance, referred to as the span. The span defines how much of the map at the given point should be visible and is also how you set the zoom level. Specifying a large span results in the user seeing a wide geographical area and corresponds to a low zoom level. Specifying a small span results in the user seeing a more narrow geographical area and corresponds to a higher zoom level.&lt;/p&gt;
+
+&lt;p&gt;Map Kit 框架使用google地图提供的数据,使用这个class需要遵守google map的协议
+当你初始化一个Map View 你需要指定地图显示的初始位置，你可以在&lt;code&gt;region&lt;/code&gt;属性里面设置，地区是一个中心点和横纵的距离,简称跨度, &lt;code&gt;span&lt;/code&gt; 定义了显示多少地图和地图的放大级别，指定一个大的跨度和一个小的放大级别用户可以看到一个大的geo图，指定一个小的跨度和大的放大级别，用户可以看到一个很详细的地图，&lt;/p&gt;
+
+&lt;p&gt;In addition to setting the span programmatically, the MKMapView class supports many standard interactions for changing the position and zoom level of the map. In particular, map views support flick and pinch gestures for scrolling around the map and zooming in and out. Support for these gestures is enabled by default but can also be disabled using the scrollEnabled and zoomEnabled properties.&lt;/p&gt;
+
+&lt;p&gt;除了编程方式设置跨度之外，MKMapView类支持许多标准的相互作用，改变位置和缩放地图。特别地，地图view支持各地的地图，滚动和缩放手势操作，默认情况下启用这些手势的支持，禁止手势而使用scrollEnabled和zoomEnabled来改变地图视图。&lt;/p&gt;
+
+&lt;p&gt;In iOS 4.0 and later, you can also use projected map coordinates instead of regions to specify some values. When you project the curved surface of the globe onto a flat surface, you get a two-dimensional version of a map where longitude lines appear to be parallel. Locations and distances on this map are specified using the MKMapPoint, MKMapSize, and MKMapRect data types. You can use these data types to specify the map’s visible region and when specifying the location of overlays.&lt;/p&gt;
+
+&lt;p&gt;在iOS 4.0和更高版本中，你也可以使用坐标，而不是地区。当你一个平面投射在地球的曲面，你得到一个二维的地图经度线。地图上的位置和距离都指定使用的MKMapPoint，MKMapSize和类型MKMapRect的数据。您可以使用这些数据类型指定地图的可见区域，并在指定位置重叠视图&lt;/p&gt;
+
+&lt;p&gt;Although you should not subclass the MKMapView class itself, you can get information about the map view’s behavior by providing a delegate object. The map view calls the methods of your custom delegate to let it know about changes in the map status and to coordinate the display of custom annotations, which are described in more detail in “Annotating the Map.” The delegate object can be any object in your application as long as it conforms to the MKMapViewDelegate protocol. For more information about implementing the delegate object, see MKMapViewDelegate Protocol Reference.&lt;/p&gt;
+
+&lt;p&gt;你不应该继承的MKMapView类本身，你可以使用地图视图的委托对象。通过地图视图调用您的自定义委托方法，让它知道在地图上的地位的变化和一些用户操作，这是更详细的描述显示“标注的地图。”委托对象可以是在您的应用程序中的任何对象，只要符合的MKMapViewDelegate协议。关于委托对象的更多信息，请参阅MKMapViewDelegate协议参考。&lt;/p&gt;
+
+&lt;h3&gt;Annotating the Map 标注地图&lt;/h3&gt;
+
+&lt;p&gt;The MKMapView class supports the ability to annotate the map with custom information. Because a map may have potentially large numbers of annotations, map views differentiate between the annotation objects used to manage the annotation data and the view objects for presenting that data on the map.&lt;/p&gt;
+
+&lt;p&gt;标注地图的MKMapView类支持注释自定义信息的地图。因为地图上可能有潜在的大量的注释，地图视图用于管理注释数据，并呈现在地图上的数据视图对象的注释对象之间的区别。&lt;/p&gt;
+
+&lt;p&gt;An annotation object is any object that conforms to the MKAnnotation protocol. Annotation objects are typically implemented using existing classes in your application’s data model. This allows you to manipulate the annotation data directly but still make it available to the map view. Each annotation object contains information about the annotation’s location on the map along with descriptive information that can be displayed in a callout.&lt;/p&gt;
+
+&lt;p&gt;注释对象是符合的MKAnnotation协议的任何对象。注释对象通常存在你的app的data model calss 这允许你直接操纵的注释数据，也可以在地图视图中使用。每个标注对象包含在地图上标注的位置，以及描述信息，可以显示在标注的信息。&lt;/p&gt;
+
+&lt;p&gt;The presentation of annotation objects on the screen is handled by an annotation view, which is an instance of the MKAnnotationView class. An annotation view is responsible for presenting the annotation data in a way that makes sense. For example, the Maps application uses a pin icon to denote specific points of interest on a map. (The Map Kit framework offers the MKPinAnnotationView class for similar annotations in your own applications.) You could also create annotation views that cover larger portions of the map.&lt;/p&gt;
+
+&lt;p&gt;注释对象在屏幕上的演示文稿是由注释view 处理的，这是一个的MKAnnotationView类的实例。注释view 是负责提供注释数据。例如，“地图”app 使用的图钉图标来表示特定地图上的某个特定的点。（地图Kit框架提供MKPinAnnotationView 用于在自己的应用程序创建注释）。你还可以创建标注的地图，涵盖较大的部分。&lt;/p&gt;
+
+&lt;p&gt;Because annotation views are needed only when they are onscreen, the MKMapView class provides a mechanism for queueing annotation views that are not in use. Annotation views with a reuse identifier can be detached and queued internally by the map view when they move offscreen. This feature improves memory use by keeping only a small number of annotation views in memory at once and by recycling the views you do have. It also improves scrolling performance by alleviating the need to create new views while the map is scrolling.&lt;/p&gt;
+
+&lt;p&gt;pView类提供为排队机制。一个可重用的注释视图可以分裂和排队当这个视图移出屏幕的时候，此功能能够改善内存使用也提高了性能&lt;/p&gt;
+
+&lt;p&gt;When configuring your map interface, you should add all of your annotation objects right away. The map view uses the coordinate data in each annotation object to determine when the corresponding annotation view needs to appear onscreen. When an annotation moves onscreen, the map view asks its delegate to create a corresponding annotation view. If your application has different types of annotations, it can define different annotation view classes to represent each type.&lt;/p&gt;
+
+&lt;p&gt;配置你的地图界面时，你应该马上添加您的注释对象。地图视图在每个注解对象使用坐标数据，以确定相应的注解认为需要时出现在屏幕上。当一个注释展示到屏幕的时候，地图视图要求其委托创建一个相应的注解视图。如果您的应用程序有不同类型的注释，它可以定义不同的注解视图类代表每个类型。&lt;/p&gt;
+
+&lt;h3&gt;Adding Overlays to the Map 添加覆盖地图&lt;/h3&gt;
+
+&lt;p&gt;In iOS 4.0 and later, you can use overlays to display content over a wide portion of the map. An overlay is any object that conforms to the MKOverlay protocol. An overlay object is a data object that contains the points needed to specify the shape and size of the overlay and its location on the map. Overlays can represent shapes such as circles, rectangles, multi-segment lines, and simple or complex polygons. You can also define your own custom overlays to represent other shapes.&lt;/p&gt;
+
+&lt;p&gt;添加覆盖地图在iOS 4.0后，您可以使用重叠显示的地图的部分内容。‘覆盖’是符合的MKOverlay协议的任何对象。一个‘覆盖对象’是一个数据对象，其中包含指定的叠加，其位置在地图上的形状和大小的点。‘覆盖对象’可以代表形状，如圆，矩形，多段线，简单或复杂的多边形。你也可以使用其他形状定义自己的自定义覆盖&lt;/p&gt;
+
+&lt;p&gt;The presentation of an overlay onscreen is handled by an overlay view, which is an instance of the MKOverlayView class. The job of an overlay view is to draw the shape representing the overlay on top of the map content. For example, an overlay that represents a bus route might have an overlay view that draws the path of the route along with icons showing the stops along that route. The Map Kit framework defines overlay views for the standard types of overlay objects and you can define additional overlay views as needed.&lt;/p&gt;
+
+&lt;p&gt;‘叠加演示‘是用叠加view处理，这是一个的MKOverlayView类的实例。一个’覆盖视图‘​​的工作是绘制地图内容上的重叠的形状。例如，表示巴士路线重叠可能有一个重叠视图绘制的路线，沿着图标显示站，沿这条路线的路径。MapKit框架定义为’覆盖对象‘的标准类型的覆盖意见，并可以定义额外的覆盖需要的意见。&lt;/p&gt;
+
+&lt;p&gt;When configuring your map interface, you can add overlay objects at any time. The map view uses the data in each overlay object to determine when the corresponding overlay view needs to appear onscreen. When an overlay moves onscreen, the map view asks its delegate to create a corresponding overlay view.&lt;/p&gt;
+
+&lt;p&gt;配置你的地图界面时，您可以随时添加的覆盖对象。地图视图中的每个重叠对象中使用的数据，以确定相应的重叠视图需要出现在屏幕上时。当覆盖移动可视屏幕上的，地图视图询问委托创建一个相应的重叠视图。&lt;/p&gt;
+
+&lt;h3&gt;Tasks&lt;/h3&gt;
+
+&lt;h4&gt;Accessing Map Properties&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mapType  property&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zoomEnabled  property&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;scrollEnabled  property&lt;/code&gt;
+
+&lt;h4&gt;Accessing the Delegate&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;delegate  property
+
+&lt;h4&gt;Manipulating the Visible Portion of the Map&lt;/h4&gt;
+
+&lt;h5&gt;region  property&lt;/h5&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– setRegion:animated:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;code&gt;centerCoordinate  property&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– setCenterCoordinate:animated:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;code&gt;visibleMapRect  property&lt;/code&gt;
+
+&lt;h5&gt;– setVisibleMapRect:animated:&lt;/h5&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– setVisibleMapRect:edgePadding:animated:&lt;/code&gt;
+
+&lt;h5&gt;Accessing the Device’s Current Location&lt;/h5&gt;&lt;/li&gt;
+&lt;li&gt;showsUserLocation  property&lt;/li&gt;
+&lt;li&gt;userLocationVisible  property&lt;/li&gt;
+&lt;li&gt;userLocation  property
+
+&lt;h5&gt;Annotating the Map&lt;/h5&gt;&lt;/li&gt;
+&lt;li&gt;annotations  property&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– addAnnotation:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– addAnnotations:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– removeAnnotation:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– removeAnnotations:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– viewForAnnotation:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– annotationsInMapRect:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;annotationVisibleRect  property&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;– dequeueReusableAnnotationViewWithIdentifier:&lt;/code&gt;
+
+&lt;h5&gt;Managing Annotation Selections&lt;/h5&gt;&lt;/li&gt;
+&lt;li&gt;selectedAnnotations  property&lt;/li&gt;
+&lt;li&gt;– selectAnnotation:animated:&lt;/li&gt;
+&lt;li&gt;– deselectAnnotation:animated:
+
+&lt;h5&gt;Adding and Removing Overlays&lt;/h5&gt;&lt;/li&gt;
+&lt;li&gt;overlays  property&lt;/li&gt;
+&lt;li&gt;– addOverlay:&lt;/li&gt;
+&lt;li&gt;– addOverlays:&lt;/li&gt;
+&lt;li&gt;– removeOverlay:&lt;/li&gt;
+&lt;li&gt;– removeOverlays:&lt;/li&gt;
+&lt;li&gt;– insertOverlay:atIndex:&lt;/li&gt;
+&lt;li&gt;– exchangeOverlayAtIndex:withOverlayAtIndex:&lt;/li&gt;
+&lt;li&gt;– insertOverlay:aboveOverlay:&lt;/li&gt;
+&lt;li&gt;– insertOverlay:belowOverlay:&lt;/li&gt;
+&lt;li&gt;– viewForOverlay:
+
+&lt;h5&gt;Converting Map Coordinates&lt;/h5&gt;&lt;/li&gt;
+&lt;li&gt;– convertCoordinate:toPointToView:&lt;/li&gt;
+&lt;li&gt;– convertPoint:toCoordinateFromView:&lt;/li&gt;
+&lt;li&gt;– convertRegion:toRectToView:&lt;/li&gt;
+&lt;li&gt;– convertRect:toRegionFromView:
+
+&lt;h5&gt;Adjusting Map Regions and Rectangles&lt;/h5&gt;&lt;/li&gt;
+&lt;li&gt;– regionThatFits:&lt;/li&gt;
+&lt;li&gt;– mapRectThatFits:&lt;/li&gt;
+&lt;li&gt;– mapRectThatFits:edgePadding:
+
+&lt;h4&gt;Tracking the User Location&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;– setUserTrackingMode:animated:&lt;/li&gt;
+&lt;li&gt;userTrackingMode  property
+
+&lt;h4&gt;Properties&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;For more about Objective-C properties, see “Properties” in The Objective-C Programming Language.
+参见&lt;a href=&quot;https://developer.apple.com/library/ios/#documentation/MapKit/Reference/MKMapViewDelegate_Protocol/MKMapViewDelegate/MKMapViewDelegate.html&quot; title=&quot;MKMapView&quot;&gt;官方文档&lt;/a&gt; .&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>jekyll on mac</title>
+   <link href="http://tom.preston-werner.com/2012/02/12/hello-git-blog-on-mac.html"/>
+   <updated>2012-02-12T00:00:00+08:00</updated>
+   <id>http://tom.preston-werner.com/2012/02/12/hello-git-blog-on-mac</id>
+   <content type="html">&lt;p&gt;===================&lt;/p&gt;
+
+&lt;h1&gt;搬家Blog到Git&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;12 Feb 2012 -beijing&lt;/p&gt;
+
+
+&lt;h3&gt;开始&lt;/h3&gt;
+
+&lt;p&gt;我架在Gae上的&lt;a href=&quot;http://blog.timger.info&quot; title=&quot;timger blog&quot;&gt;blog&lt;/a&gt;最近老抽风，以及配额超出限制，打算给自己的blog搬家下，前几天在考察SAE，赶紧还行，正准备迁移到&lt;a href=&quot;http://sae.sina.com.cn/&quot; title=&quot;SAE&quot;&gt;SAE&lt;/a&gt;,当然也考虑过百度blog，&lt;/p&gt;
+
+&lt;p&gt;在GAE上搭建blog快3年了，虽然高质量的blog不多，但是还是有一些收获的，blog这个东西，不是求高产，只是兴致，有时候有写作冲动的时候好有个地方写东西，&lt;/p&gt;
+
+&lt;h4&gt;搬家的原因&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GAE已经被墙，虽然我用自己的AWS EC2 做了反向代理，但还是经常有访问问题的，由于没备案，DNS解析经常出问题&lt;/li&gt;
+&lt;li&gt;blog的留言和评论部分因为GAE的被墙而不能使用了，&lt;/li&gt;
+&lt;li&gt;我已经好久没写GAE的app了，有时候想改下自己BLog的样式，或者添加一个Blog最近活动的展示，需要下GAE SDk 然后上传，很不方便，&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h5&gt;我需要的blog&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;简单：界面干净，操作简单，能够以很方便地发博客，我讨厌在浏览器中写blog，很没有感觉，之前GAE Blog 用&lt;a href=&quot;https://github.com/xuming/micolog&quot;&gt;Micolog&lt;/a&gt;搭建，后来自己写了一个Email转发到blog地插件&lt;a href=&quot;&quot;&gt;&lt;/a&gt;,基本也都是在Gmail&amp;amp;Gdoc里面写Blog&lt;/li&gt;
+&lt;li&gt;方便配置和修改，可以很方便修改样式，添加一些小html元素，前面说了，我在GAE blog中添加一个html元素很麻烦，&lt;/li&gt;
+&lt;li&gt;能评论和访客交流，最好关联微薄[这年头大家都是混微薄地]&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;正在由于搬家到SAE 还是 百度空间的时候，发现了git 写Blog 的方法，一眼就喜欢上，&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;blog文章就是代码，IDE中就可以写BLOG，&lt;/li&gt;
+&lt;li&gt;标记语言，对于程序员的Blog来说太方便了，代码随便贴&lt;/li&gt;
+&lt;li&gt;静态html页面，没有了数据库，搬家也容易&lt;/li&gt;
+&lt;li&gt;可以和自己的开源项目完美结合，&lt;/li&gt;
+&lt;li&gt;很容易修改html代码来改变css样式和添加其他元素&lt;/li&gt;
+&lt;li&gt;评论怎么办？加上三方评论，基本够用了&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h5&gt;install 过程 ［Mac］&lt;/h5&gt;
+
+&lt;p&gt;我使用的mac air 使用jekyll倒是简单，但是air上安装 jekyll费了一些功夫，jekyll是ruby写的，我对ruby不是很熟悉&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;安装可以参见&lt;a href=&quot;http://jekyllbootstrap.com/usage/jekyll-quick-start.html&quot;&gt;jekyll quick start&lt;/a&gt;, &lt;a href=&quot;http://www.worldhello.net/gotgithub/03-project-hosting/050-homepage.html#jekyll&quot;&gt;http://www.worldhello.net/&lt;/a&gt;,&lt;a href=&quot;http://blog.envylabs.com/2009/08/publishing-a-blog-with-github-pages-and-jekyll/&quot;&gt;Publishing a Blog with GitHub Pages and Jekyll&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;markdown语法参见post_下的例子和&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;blog的模板到jekyll项目主页下载&lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/sites&quot;&gt;jekyll sites&lt;/a&gt;找一个你喜欢的克隆下来就ok&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h6&gt;mac install jekyll&lt;/h6&gt;
+
+&lt;p&gt;git 怎么安装就不说了，自己google之
+mac air自带的ruby gem 版本太低需要升级&lt;code&gt;sudo gem update --system&lt;/code&gt;貌似也不能升级到需要的版本 &lt;a href=&quot;http://brandonbohling.com/2011/08/27/Installing-Jekyll-on-Mac/&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;安装rvm ：&lt;code&gt;bash &amp;lt; &amp;lt;( curl https://rvm.beginrescueend.com/releases/rvm-install-head )&lt;/code&gt; 执行完之后有提示一段代码 &lt;code&gt;bash -s stable &amp;lt; &amp;lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)&lt;/code&gt; 的复制到shell 执行, 后执行使rvm可用 &lt;code&gt;source /home/timger/.profile&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;安装ruby &lt;code&gt;rvm install 1.9.2&lt;/code&gt; 根据提示完成安装，之后 &lt;code&gt;ruby -v&lt;/code&gt; 可看到版本为1.9.2  之后 &lt;code&gt;rvm --default 1.9.2&lt;/code&gt; 设置1.9.2为默认版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gem install jekyll&lt;/code&gt; and &lt;code&gt;gem install jekyll-tagging&lt;/code&gt; 安装jekyll&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h5&gt;其他&lt;/h5&gt;
+
+&lt;p&gt;考虑了&lt;a href=&quot;http://disqus.com&quot;&gt;Disqus&lt;/a&gt;速度不稳定 弃用   &lt;a href=&quot;http://uyan.cc/&quot;&gt;uyan&lt;/a&gt;国内创业三方评论，用户很多36ke也在使用选用之,&lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>
