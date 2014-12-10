@@ -1,5 +1,4 @@
 #!/bin/bash
-#Author: timger <yishenggudou@gmail.com>
-#weibo <http://t.sina.com/zhanghaibo>
-#@yishenggudou http://twitter.com/yishenggudou
+#Author: timger <zubin.jiang@gmail.com>
+#weibo <http://t.sina.com/yangpage>
 jekyll --pygments --safe --server
